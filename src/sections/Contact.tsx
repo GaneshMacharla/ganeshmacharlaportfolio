@@ -133,7 +133,7 @@ export function Contact() {
           eyebrow="Contact"
           title="Have an Idea? Let's Build"
           highlight="Something Great."
-          subtitle="Open to software engineering internships, AI engineering roles, freelance builds, and technical collaborations."
+          subtitle="Have a website, app, or automation in mind? I take on freelance builds and technical collaborations."
         />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
@@ -317,7 +317,7 @@ export function Contact() {
                   required
                   value={form.subject}
                   onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
-                  placeholder="Internship, AI Project, or Freelance Inquiry"
+                  placeholder="Website, App, or AI Automation Project"
                   className="w-full rounded-xl border border-white/10 bg-[#07080d]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-indigo-400 focus:outline-none focus:ring-1 focus:ring-indigo-400"
                 />
               </div>

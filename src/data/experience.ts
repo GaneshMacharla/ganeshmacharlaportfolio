@@ -35,13 +35,15 @@ export const timeline: TimelineItem[] = [
   {
     id: 'ai-product-building',
     period: '2024 — Present',
-    title: 'Independent Full-Stack & AI Systems Builder',
-    organization: 'Self-Directed Product Engineering',
+    title: 'Freelance Full-Stack & AI Automation Developer',
+    organization: 'Independent',
     type: 'Building',
     description:
       'Designing and building practical software products across AI voice automation, retrieval-augmented generation, and containerized web applications.',
     highlights: [
       'Built Choranta, an AI voice employee platform using React, TypeScript, FastAPI, Supabase, and telephony APIs',
+      'Built Poojari, a native Android booking app (Kotlin, Jetpack Compose, Firebase, Razorpay) with a Next.js admin panel',
+      'Built a YouTube Shorts auto-publishing pipeline with multi-channel OAuth, scheduling, and quota tracking',
       'Built BookMind, a RAG PDF knowledge assistant powered by ChromaDB, embeddings, and LLMs',
       'Built LabXpert (Django, React, PostgreSQL, Docker) and a handwritten Digit Recognition app (Flask, React, ML)',
     ],
@@ -95,9 +97,9 @@ export const achievements: AchievementItem[] = [
   {
     id: 'end-to-end-ai-products',
     title: 'End-to-End AI & Full-Stack Product Execution',
-    issuerOrContext: 'Choranta · BookMind · LabXpert · Digit Recognition',
+    issuerOrContext: 'Choranta · Poojari · YouTube Auto-Publisher · BookMind · LabXpert',
     category: 'Engineering Milestone',
     description:
-      'Architected and built four distinct systems spanning real-time AI voice telephony, persistent vector RAG pipelines, Dockerized campus workflows, and neural network inference.',
+      'Built six distinct systems spanning AI voice telephony, a native Android booking marketplace with payments, YouTube publishing automation, RAG pipelines, Dockerized web apps, and neural network inference.',
   },
 ];

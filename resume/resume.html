@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ganesh Macharla — Resume</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1f2937; font-size: 9.6pt; line-height: 1.42; }
+  .page { width: 210mm; min-height: 297mm; padding: 13mm 15mm 11mm; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5px solid #4f46e5; padding-bottom: 8px; }
+  h1 { font-size: 23pt; letter-spacing: -0.3px; color: #111827; line-height: 1.1; }
+  .role { font-size: 11pt; color: #4f46e5; font-weight: 600; margin-top: 3px; }
+  .contact { text-align: right; font-size: 8.8pt; color: #374151; line-height: 1.55; }
+  .contact a { color: #374151; text-decoration: none; }
+  .contact .port { color: #4f46e5; font-weight: 600; }
+  h2 { font-size: 9.5pt; text-transform: uppercase; letter-spacing: 1.3px; color: #4f46e5; margin: 11px 0 5px; border-bottom: 1px solid #e5e7eb; padding-bottom: 2px; }
+  .summary { margin-top: 9px; }
+  .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .svc { background: #f5f5ff; border: 1px solid #e0e0fb; border-radius: 5px; padding: 5px 7px; }
+  .svc b { display: block; font-size: 9pt; color: #111827; }
+  .svc span { font-size: 8.3pt; color: #4b5563; line-height: 1.3; display: block; }
+  .proj { margin-bottom: 7px; }
+  .proj-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .proj-head b { font-size: 10.3pt; color: #111827; }
+  .proj-head .cat { font-size: 8.5pt; color: #4f46e5; font-weight: 600; margin-left: 6px; }
+  .stack { font-size: 8.3pt; color: #6b7280; font-style: italic; }
+  ul { padding-left: 14px; margin-top: 2px; }
+  li { margin-bottom: 1px; }
+  .skills { display: grid; grid-template-columns: 132px 1fr; row-gap: 2px; }
+  .skills b { color: #111827; }
+  .edu-row { display: flex; justify-content: space-between; margin-bottom: 2px; }
+  .muted { color: #6b7280; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Ganesh Macharla</h1>
+      <div class="role">Freelance Developer · Websites, Apps &amp; AI Automation</div>
+    </div>
+    <div class="contact">
+      +91 93479 73942 · Hyderabad<br>
+      <a href="mailto:ganeshmacharla2020@gmail.com">ganeshmacharla2020@gmail.com</a><br>
+      <a class="port" href="https://ganeshmacharla.vercel.app">ganeshmacharla.vercel.app</a> ·
+      <a href="https://github.com/GaneshMacharla">github.com/GaneshMacharla</a> ·
+      <a href="https://linkedin.com/in/ganesh-macharla">LinkedIn</a>
+    </div>
+  </header>
+
+  <p class="summary">Developer who builds complete products for businesses: web apps, native Android apps, AI voice agents and
+  automation pipelines. I've shipped an AI calling platform, a two-sided booking app with online payments and a
+  multi-channel YouTube publishing system, covering frontend, backend, database, payments and third-party APIs end to end.</p>
+
+  <h2>What I Build</h2>
+  <div class="services">
+    <div class="svc"><b>Websites &amp; Web Apps</b><span>React, Next.js, TypeScript, FastAPI, Django</span></div>
+    <div class="svc"><b>Mobile Apps</b><span>Android with Kotlin &amp; Jetpack Compose, Firebase</span></div>
+    <div class="svc"><b>AI Voice Agents</b><span>Inbound/outbound calls, LLMs, knowledge bases</span></div>
+    <div class="svc"><b>Automation</b><span>API integrations, scheduling, RAG assistants</span></div>
+  </div>
+
+  <h2>Projects</h2>
+
+  <div class="proj">
+    <div class="proj-head"><div><b>Choranta</b><span class="cat">AI Voice Agent Platform</span></div>
+      <span class="stack">React, TypeScript, FastAPI, Supabase, Telephony &amp; AI APIs</span></div>
+    <ul>
+      <li>Platform for businesses to create, test, deploy and monitor AI "voice employees" that handle inbound and outbound calls.</li>
+      <li>Natural English/Hinglish conversations grounded in each business's knowledge base; busy-caller callbacks.</li>
+      <li>Operations console with versioned agent configs, call logs, usage tracking and JWT role-based access.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><div><b>Poojari</b><span class="cat">Android Booking App</span></div>
+      <span class="stack">Kotlin, Jetpack Compose, Firebase, Cloud Functions, Razorpay, Next.js</span></div>
+    <ul>
+      <li>Two-sided marketplace connecting devotees with verified Pujaris; Pujaris set their own prices and availability.</li>
+      <li>Full booking flow (puja → location → date/time → Pujari → checkout) with Razorpay payments via Cloud Functions.</li>
+      <li>Pujari dashboard with bookings and earnings, push notifications, Telugu/English UI and a Next.js admin panel.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><div><b>YouTube Auto-Publisher</b><span class="cat">Content Automation</span></div>
+      <span class="stack">Python, Flask, YouTube Data API v3, OAuth 2.0, JavaScript</span></div>
+    <ul>
+      <li>Publishes Shorts to multiple YouTube channels on a schedule from a folder of videos, with no manual uploading.</li>
+      <li>Auto-generates titles and descriptions from caption files; resumable uploads, retry and publish log.</li>
+      <li>Multi-channel OAuth, background scheduler and daily API quota tracking from a web dashboard.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><div><b>BookMind</b><span class="cat">AI Document Assistant (RAG)</span></div>
+      <span class="stack">Python, ChromaDB, Embeddings, Cross-Encoder, LLMs, Streamlit</span></div>
+    <ul>
+      <li>Answers questions from PDFs with semantic search, cross-encoder reranking and grounded LLM responses.</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><div><b>LabXpert</b><span class="cat">Full-Stack Web Platform</span></div>
+      <span class="stack">Django, React, PostgreSQL, Docker</span></div>
+    <ul>
+      <li>Lab management system with scheduled quests and quizzes and location-verified attendance; Dockerized deployment.</li>
+    </ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <b>Languages</b><span>Python, TypeScript, JavaScript, Kotlin, C++, SQL</span>
+    <b>Frontend &amp; Mobile</b><span>React, Next.js, Tailwind CSS, Vite, Jetpack Compose (Android)</span>
+    <b>Backend</b><span>FastAPI, Django, Flask, Node.js, REST APIs, Firebase Cloud Functions</span>
+    <b>AI</b><span>LLM integration, AI voice agents, RAG, LangChain, LangGraph, embeddings, machine learning</span>
+    <b>Data &amp; Infra</b><span>PostgreSQL, Supabase, Firebase, ChromaDB, Docker, Git, Vercel</span>
+    <b>Integrations</b><span>Razorpay, YouTube Data API, Google OAuth, telephony APIs, push notifications</span>
+  </div>
+
+  <h2>Education &amp; Achievements</h2>
+  <div class="edu-row"><span><b>B.Tech, CSE (AI &amp; ML)</b> — JNTUH College of Engineering, Hyderabad</span><span class="muted">2025 – 2028</span></div>
+  <div class="edu-row"><span><b>Diploma, Computer Science</b> — Government Polytechnic, Masab Tank</span><span class="muted">2022 – 2025</span></div>
+  <ul style="margin-top:4px">
+    <li>State <b>Rank 8</b> in TS ECET (Computer Science &amp; Engineering).</li>
+    <li>Machine Learning Specialization — Andrew Ng, DeepLearning.AI &amp; Stanford (Coursera).</li>
+  </ul>
+</div>
+</body>
+</html>

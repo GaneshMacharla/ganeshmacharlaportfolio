@@ -1,4 +1,14 @@
-import { BookOpen, CheckCircle2, MapPin, PhoneCall, Sparkles } from 'lucide-react';
+import {
+  BookOpen,
+  CalendarClock,
+  CheckCircle2,
+  CreditCard,
+  MapPin,
+  PhoneCall,
+  Smartphone,
+  Sparkles,
+  Upload,
+} from 'lucide-react';
 import chorantaLogo from '@/assets/choranta-logo.png';
 import digitSample from '@/assets/digit-sample.png';
 import type { Project } from '@/data/projects';
@@ -48,6 +58,85 @@ export function ProjectPreview({ previewType, name }: ProjectPreviewProps) {
             Telephony + LLM Pipeline
           </span>
           <span>FastAPI · Supabase</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (previewType === 'poojari') {
+    return (
+      <div className="relative flex h-48 w-full flex-col justify-between overflow-hidden rounded-xl border border-white/[0.07] bg-[#080b12] p-4">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 font-display text-sm font-semibold text-white">
+            <Smartphone className="h-4 w-4 text-orange-400" aria-hidden="true" />
+            Poojari App
+          </span>
+          <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-2 py-0.5 font-mono text-[10px] text-orange-300">
+            ANDROID
+          </span>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 font-mono text-[10px]">
+          {['Choose Puja', 'Pick Pujari', 'Pay Dakshina'].map((step, i) => (
+            <div
+              key={step}
+              className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-2 py-2 text-center text-slate-300"
+            >
+              <div className="text-orange-300">0{i + 1}</div>
+              {step}
+            </div>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2 font-mono text-[11px] text-slate-400">
+          <span className="flex items-center gap-1.5 text-orange-300">
+            <CreditCard className="h-3.5 w-3.5" aria-hidden="true" />
+            Razorpay + FCM
+          </span>
+          <span>Kotlin · Firebase</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (previewType === 'publisher') {
+    return (
+      <div className="relative flex h-48 w-full flex-col justify-between overflow-hidden rounded-xl border border-white/[0.07] bg-[#080b12] p-4">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-2 font-display text-sm font-semibold text-white">
+            <Upload className="h-4 w-4 text-rose-400" aria-hidden="true" />
+            Shorts Auto-Publisher
+          </span>
+          <span className="rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 font-mono text-[10px] text-rose-300">
+            AUTOMATION
+          </span>
+        </div>
+
+        <div className="space-y-1.5 font-mono text-[11px]">
+          {[
+            ['reel_001.mp4', 'Published'],
+            ['reel_002.mp4', 'Tomorrow 6:00 PM'],
+            ['reel_003.mp4', 'Scheduled'],
+          ].map(([file, status], i) => (
+            <div
+              key={file}
+              className="flex items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-slate-300"
+            >
+              <span className="flex items-center gap-1.5">
+                {i === 0 ? (
+                  <CheckCircle2 className="h-3.5 w-3.5 text-rose-300" aria-hidden="true" />
+                ) : (
+                  <CalendarClock className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
+                )}
+                {file}
+              </span>
+              <span className={i === 0 ? 'text-rose-300' : 'text-slate-400'}>{status}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="font-mono text-[10px] text-slate-400">
+          Python · Flask · YouTube Data API · OAuth
         </div>
       </div>
     );

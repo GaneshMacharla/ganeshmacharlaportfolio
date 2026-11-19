@@ -12,7 +12,7 @@ export interface Project {
   githubUrl: string | null;
   repoNote?: string;
   liveUrl: string | null;
-  previewType: 'choranta' | 'bookmind' | 'labxpert' | 'digit';
+  previewType: 'choranta' | 'poojari' | 'publisher' | 'bookmind' | 'labxpert' | 'digit';
   accentClass: string;
 }
 
@@ -55,6 +55,69 @@ export const projects: Project[] = [
     liveUrl: null,
     previewType: 'choranta',
     accentClass: 'from-emerald-400/20 via-teal-500/10 to-transparent',
+  },
+  {
+    slug: 'poojari',
+    name: 'Poojari',
+    category: 'Android App / Marketplace',
+    tagline: 'Android app for booking verified Pujaris for ceremonies, with online Dakshina payments',
+    description:
+      'A two-sided Android marketplace that connects devotees with verified Pujaris for Griha Pravesh, Satyanarayana Puja, Homams, and other ceremonies, with Pujaris setting their own prices.',
+    problem:
+      'Families find Pujaris by word of mouth, with no clear pricing, availability, or way to confirm and pay for a booking in advance.',
+    solution:
+      'Built a native Kotlin + Jetpack Compose app with separate Devotee and Pujari flows, Firebase Auth/Firestore/Storage, Razorpay checkout through Cloud Functions, push notifications, and a Next.js admin panel for Pujari verification.',
+    capabilities: [
+      'Mobile OTP login with Devotee and Pujari roles',
+      'Puja → location → date and time-of-day booking flow with available-Pujari listing',
+      'Pujari-set pricing, availability calendar, bookings, and earnings dashboard',
+      'Razorpay Dakshina checkout with server-side order creation',
+      'Push notifications for booking updates and a Telugu/English interface',
+      'Service-area gating, Pujari verification workflow, and samagri checklist',
+    ],
+    architecture: [
+      'Kotlin + Jetpack Compose Android app with a repository layer and Room cache',
+      'Firebase Auth, Firestore, Storage, and Cloud Messaging',
+      'Cloud Functions for Razorpay order creation and booking lifecycle triggers',
+      'Next.js admin panel for verifying Pujaris and tracking bookings',
+    ],
+    technologies: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Cloud Functions', 'Razorpay', 'Next.js'],
+    githubUrl: null,
+    repoNote: 'Private repository — app demo available on request',
+    liveUrl: null,
+    previewType: 'poojari',
+    accentClass: 'from-orange-400/20 via-amber-500/10 to-transparent',
+  },
+  {
+    slug: 'youtube-auto-publisher',
+    name: 'YouTube Auto-Publisher',
+    category: 'Automation',
+    tagline: 'Hands-free YouTube Shorts publishing pipeline for multiple channels',
+    description:
+      'An automation dashboard that takes a folder of rendered short videos, reads each caption file, and publishes them to one or more YouTube channels on a schedule through the YouTube Data API.',
+    problem:
+      'Posting short videos daily across channels means repetitive manual uploads, copy-pasting titles and descriptions, and keeping track of what went live.',
+    solution:
+      'Built a Flask service with a web dashboard that scans a video folder, parses captions into titles and descriptions, schedules posts, and uploads them with resumable uploads, tracking API quota and retrying failures.',
+    capabilities: [
+      'Multi-channel Google OAuth: connect any number of YouTube channels once',
+      'Folder scan that pairs each video with its caption file automatically',
+      'Scheduling by start date, time of day, and number of posts',
+      'Resumable uploads via YouTube Data API v3 with a background scheduler',
+      'Daily quota estimation, publish log, retry, and publish-all controls',
+    ],
+    architecture: [
+      'Python Flask REST API with a 60-second background scheduler',
+      'YouTube Data API v3 with OAuth 2.0 refresh tokens per channel',
+      'Caption parser that derives titles and descriptions from text files',
+      'Vanilla JS dashboard for scheduling, logs, and quota',
+    ],
+    technologies: ['Python', 'Flask', 'YouTube Data API', 'OAuth 2.0', 'JavaScript'],
+    githubUrl: null,
+    repoNote: 'Private repository — demo available on request',
+    liveUrl: null,
+    previewType: 'publisher',
+    accentClass: 'from-rose-400/20 via-red-500/10 to-transparent',
   },
   {
     slug: 'bookmind',

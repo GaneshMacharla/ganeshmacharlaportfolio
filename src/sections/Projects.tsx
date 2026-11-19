@@ -15,7 +15,7 @@ export function Projects() {
           eyebrow="Featured Projects"
           title="Selected Systems &"
           highlight="Products"
-          subtitle="Four practical projects spanning AI voice automation, retrieval-augmented generation, full-stack web platforms, and machine learning."
+          subtitle="Real products spanning AI voice agents, an Android booking app, content publishing automation, RAG assistants, and full-stack web platforms."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
