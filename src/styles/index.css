@@ -46,8 +46,209 @@
   border-color: rgba(255, 255, 255, 0.16);
 }
 
+/* ---------- 3D / motion layer ---------- */
+
+.text-gradient-anim {
+  background: linear-gradient(100deg, #818cf8 0%, #22d3ee 30%, #e879f9 55%, #818cf8 80%, #22d3ee 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 7s linear infinite;
+}
+
+@keyframes gradient-pan {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg, #4f46e5, #6366f1 45%, #0891b2);
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.35), 0 10px 40px -10px rgba(99, 102, 241, 0.7);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s;
+}
+
+.btn-shine:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.6), 0 16px 50px -10px rgba(99, 102, 241, 0.9);
+}
+
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+.marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tilt-perspective {
+  perspective: 1100px;
+}
+
+.tilt-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --gx: 50%;
+  --gy: 50%;
+  --glare: 0;
+  position: relative;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, border-color 0.3s, box-shadow 0.3s;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 30px 80px -30px rgba(99, 102, 241, 0.45);
+}
+
+.tilt-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: var(--glare);
+  transition: opacity 0.3s;
+  background: radial-gradient(circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.12), transparent 45%);
+  mix-blend-mode: screen;
+}
+
+/* ---------- custom cursor (fine pointers only, set from JS) ---------- */
+
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+html.custom-cursor input,
+html.custom-cursor textarea,
+html.custom-cursor select,
+html.custom-cursor [contenteditable='true'] {
+  cursor: text !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  opacity: 0;
+  border-radius: 9999px;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: #fff;
+  box-shadow: 0 0 12px 2px rgba(34, 211, 238, 0.8);
+  transition: opacity 0.3s, width 0.25s, height 0.25s, margin 0.25s;
+}
+
+.cursor-ring {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1.5px solid rgba(129, 140, 248, 0.75);
+  transition:
+    opacity 0.3s,
+    width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.cursor-label {
+  font: 600 11px/1 var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cursor-ring[data-mode='link'] {
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border-color: rgba(34, 211, 238, 0.9);
+  background: rgba(34, 211, 238, 0.1);
+}
+
+.cursor-dot[data-mode='link'] {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+}
+
+.cursor-ring[data-mode='view'] {
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  border-color: transparent;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.85), rgba(8, 145, 178, 0.85));
+  backdrop-filter: blur(4px);
+}
+
+.cursor-ring[data-mode='view'] .cursor-label {
+  opacity: 1;
+}
+
+.cursor-dot[data-mode='view'] {
+  opacity: 0 !important;
+}
+
+.cursor-ring[data-mode='text'],
+.cursor-dot[data-mode='text'] {
+  opacity: 0 !important;
+}
+
+.cursor-ring.cursor-press {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+}
+
+/* lifts card content toward the viewer when tilted */
+.tilt-pop {
+  transform: translateZ(40px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .marquee,
+  .text-gradient-anim {
+    animation: none;
+  }
+
+  .tilt-card {
+    transform: none !important;
   }
 }

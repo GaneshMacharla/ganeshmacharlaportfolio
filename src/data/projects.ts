@@ -11,8 +11,10 @@ export interface Project {
   technologies: string[];
   githubUrl: string | null;
   repoNote?: string;
+  /** closed-source, revenue-generating product */
+  commercial?: boolean;
   liveUrl: string | null;
-  previewType: 'choranta' | 'poojari' | 'publisher' | 'bookmind' | 'labxpert' | 'digit';
+  previewType: 'choranta' | 'poojari' | 'publisher' | 'website' | 'bookmind' | 'labxpert' | 'digit';
   accentClass: string;
 }
 
@@ -20,10 +22,10 @@ export const projects: Project[] = [
   {
     slug: 'choranta',
     name: 'Choranta',
-    category: 'AI Voice Agents / SaaS',
-    tagline: 'AI-powered voice employee platform for automated business communication',
+    category: 'AI Voice Agent Platform',
+    tagline: 'AI voice agent platform that answers and makes business calls automatically',
     description:
-      'An AI-powered voice employee platform and internal operations studio built to configure, test, deploy, and monitor intelligent voice agents across inbound and outbound business calls.',
+      'An AI voice agent platform for businesses to configure, test, deploy, and monitor voice agents that handle inbound and outbound calls.',
     problem:
       'Businesses lose customer inquiries and spend hours handling repetitive calls such as appointment bookings, lead qualification, and routine support.',
     solution:
@@ -51,7 +53,9 @@ export const projects: Project[] = [
       'Telephony APIs',
     ],
     githubUrl: null,
-    repoNote: 'Private repository — architecture walkthrough available on request',
+    repoNote:
+      'Source code is private because Choranta is a commercial, revenue-generating AI voice agent platform. A live demo and architecture walkthrough are available on request.',
+    commercial: true,
     liveUrl: null,
     previewType: 'choranta',
     accentClass: 'from-emerald-400/20 via-teal-500/10 to-transparent',
@@ -83,7 +87,9 @@ export const projects: Project[] = [
     ],
     technologies: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Cloud Functions', 'Razorpay', 'Next.js'],
     githubUrl: null,
-    repoNote: 'Private repository — app demo available on request',
+    repoNote:
+      'Source code is private because Poojari is a commercial, revenue-generating product. An app demo is available on request.',
+    commercial: true,
     liveUrl: null,
     previewType: 'poojari',
     accentClass: 'from-orange-400/20 via-amber-500/10 to-transparent',
@@ -113,11 +119,37 @@ export const projects: Project[] = [
       'Vanilla JS dashboard for scheduling, logs, and quota',
     ],
     technologies: ['Python', 'Flask', 'YouTube Data API', 'OAuth 2.0', 'JavaScript'],
-    githubUrl: null,
-    repoNote: 'Private repository — demo available on request',
+    githubUrl: 'https://github.com/GaneshMacharla/igytscheduler',
     liveUrl: null,
     previewType: 'publisher',
     accentClass: 'from-rose-400/20 via-red-500/10 to-transparent',
+  },
+  {
+    slug: 'power-fitness-gym',
+    name: 'Power Fitness Gym',
+    category: 'Business Website',
+    tagline: 'Lead-generating website for a gym in Medchal, Hyderabad',
+    description:
+      'A fast, mobile-first website for Power Fitness Gym in Medchal that turns local visitors into enquiries through WhatsApp, with programs, gallery, offers and location in one page.',
+    problem:
+      'A local gym needed an online presence that works on phones, shows its facilities and offers, and makes it effortless for new members to get in touch.',
+    solution:
+      'Designed and built a responsive landing page with scroll animations, a WhatsApp-first enquiry flow, Google Maps integration and on-page SEO, deployed on Vercel with no build step.',
+    capabilities: [
+      'Mobile-first responsive design with a dark theme and orange brand accent',
+      'Floating WhatsApp button and a contact form that opens a pre-filled WhatsApp chat',
+      'Scroll-triggered animations and animated counters',
+      'Embedded Google Maps location and on-page SEO for local search',
+    ],
+    architecture: [
+      'Static HTML, CSS and vanilla JavaScript for instant loading',
+      'Deployed on Vercel with optimized images and video',
+    ],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'SEO', 'Vercel'],
+    githubUrl: 'https://github.com/GaneshMacharla/powerfitnessgym',
+    liveUrl: 'https://powerfitnessgym-psi.vercel.app',
+    previewType: 'website',
+    accentClass: 'from-orange-400/20 via-red-500/10 to-transparent',
   },
   {
     slug: 'bookmind',

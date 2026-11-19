@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   CreditCard,
   MapPin,
+  MessageCircle,
   PhoneCall,
   Smartphone,
   Sparkles,
@@ -137,6 +138,33 @@ export function ProjectPreview({ previewType, name }: ProjectPreviewProps) {
 
         <div className="font-mono text-[10px] text-slate-400">
           Python · Flask · YouTube Data API · OAuth
+        </div>
+      </div>
+    );
+  }
+
+  if (previewType === 'website') {
+    return (
+      <div className="relative flex h-48 w-full flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-[#080b12]">
+        <div className="flex items-center gap-1.5 border-b border-white/[0.06] px-3 py-2">
+          <span className="h-2 w-2 rounded-full bg-red-400/70" />
+          <span className="h-2 w-2 rounded-full bg-amber-400/70" />
+          <span className="h-2 w-2 rounded-full bg-emerald-400/70" />
+          <span className="ml-2 flex-1 truncate rounded-md bg-white/[0.04] px-2 py-0.5 font-mono text-[10px] text-slate-400">
+            powerfitnessgym-psi.vercel.app
+          </span>
+        </div>
+        <div className="relative flex flex-1 flex-col justify-center bg-gradient-to-br from-orange-500/20 via-transparent to-red-500/10 px-4">
+          <span className="font-mono text-[10px] tracking-widest text-orange-300">MEDCHAL · HYDERABAD</span>
+          <span className="mt-1 font-display text-xl leading-tight font-bold text-white">
+            POWER <span className="text-orange-400">FITNESS</span> GYM
+          </span>
+          <div className="mt-3 flex gap-2">
+            <span className="rounded-md bg-orange-500 px-2.5 py-1 text-[10px] font-semibold text-white">Join Now</span>
+            <span className="flex items-center gap-1 rounded-md border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-1 text-[10px] text-emerald-300">
+              <MessageCircle className="h-3 w-3" aria-hidden="true" /> WhatsApp
+            </span>
+          </div>
         </div>
       </div>
     );

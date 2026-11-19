@@ -76,8 +76,8 @@ export function ProjectDetailPage() {
               <span>View Repository</span>
             </a>
           ) : (
-            <span className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-slate-300">
-              <Lock className="h-4 w-4 text-slate-400" aria-hidden="true" />
+            <span className="inline-flex max-w-xl items-start gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-slate-300">
+              <Lock className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
               <span>{project.repoNote || 'Private Repository'}</span>
             </span>
           )}

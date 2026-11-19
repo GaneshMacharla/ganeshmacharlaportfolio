@@ -41,7 +41,7 @@ export const timeline: TimelineItem[] = [
     description:
       'Designing and building practical software products across AI voice automation, retrieval-augmented generation, and containerized web applications.',
     highlights: [
-      'Built Choranta, an AI voice employee platform using React, TypeScript, FastAPI, Supabase, and telephony APIs',
+      'Built Choranta, an AI voice agent platform using React, TypeScript, FastAPI, Supabase, and telephony APIs',
       'Built Poojari, a native Android booking app (Kotlin, Jetpack Compose, Firebase, Razorpay) with a Next.js admin panel',
       'Built a YouTube Shorts auto-publishing pipeline with multi-channel OAuth, scheduling, and quota tracking',
       'Built BookMind, a RAG PDF knowledge assistant powered by ChromaDB, embeddings, and LLMs',

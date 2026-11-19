@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ScrollFade } from '@/components/ScrollFade';
 import { About } from '@/sections/About';
 import { Achievements } from '@/sections/Achievements';
 import { Contact } from '@/sections/Contact';
@@ -12,7 +13,7 @@ export function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = 'Ganesh Macharla — Full-Stack Developer, AI Engineer & AI Automation';
+    document.title = 'Ganesh Macharla — Websites, Apps & AI Automation';
   }, []);
 
   useEffect(() => {
@@ -27,13 +28,25 @@ export function HomePage() {
 
   return (
     <>
-      <Hero />
-      <About />
-      <Skills />
+      <ScrollFade variant="hero">
+        <Hero />
+      </ScrollFade>
+      <ScrollFade>
+        <About />
+      </ScrollFade>
+      <ScrollFade>
+        <Skills />
+      </ScrollFade>
       <Projects />
-      <Experience />
-      <Achievements />
-      <Contact />
+      <ScrollFade>
+        <Experience />
+      </ScrollFade>
+      <ScrollFade>
+        <Achievements />
+      </ScrollFade>
+      <ScrollFade>
+        <Contact />
+      </ScrollFade>
     </>
   );
 }

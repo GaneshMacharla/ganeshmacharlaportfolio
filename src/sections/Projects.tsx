@@ -4,6 +4,7 @@ import { ArrowUpRight, ExternalLink, Lock } from 'lucide-react';
 import { GitHubIcon } from '@/components/BrandIcons';
 import { ProjectPreview } from '@/components/ProjectPreview';
 import { SectionHeader } from '@/components/SectionHeader';
+import { TiltCard } from '@/components/TiltCard';
 import { projects } from '@/data/projects';
 
 export function Projects() {
@@ -22,15 +23,18 @@ export function Projects() {
           {projects.map((project, idx) => (
             <motion.article
               key={project.slug}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.45, delay: idx * 0.08 }}
-              className="surface-card group relative flex flex-col justify-between overflow-hidden rounded-2xl p-6 transition-transform duration-200 hover:-translate-y-1"
+              initial={{ opacity: 0, y: 60, rotateX: 18 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: false, amount: 0.15, margin: "-8% 0px -8% 0px" }}
+              transition={{ duration: 0.8, delay: (idx % 2) * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              style={{ transformPerspective: 1200 }}
             >
+             <TiltCard className="surface-card group flex flex-col justify-between overflow-hidden rounded-2xl p-6">
               <div>
                 {/* Preview */}
-                <ProjectPreview previewType={project.previewType} name={project.name} />
+                <div className="tilt-pop">
+                  <ProjectPreview previewType={project.previewType} name={project.name} />
+                </div>
 
                 {/* Category & Title */}
                 <div className="mt-5 flex items-center justify-between gap-3">
@@ -38,7 +42,7 @@ export function Projects() {
                     {project.category}
                   </span>
                   <span className="font-mono text-xs text-slate-500">
-                    0{idx + 1}
+                    {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
 
@@ -92,7 +96,7 @@ export function Projects() {
                       className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-1.5 text-xs text-slate-400"
                     >
                       <Lock className="h-3.5 w-3.5" aria-hidden="true" />
-                      <span>Private Repo</span>
+                      <span>{project.commercial ? 'Private · Commercial product' : 'Private Repo'}</span>
                     </span>
                   )}
 
@@ -117,6 +121,7 @@ export function Projects() {
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
               </div>
+             </TiltCard>
             </motion.article>
           ))}
         </div>

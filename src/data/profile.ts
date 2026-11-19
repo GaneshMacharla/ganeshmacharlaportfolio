@@ -66,7 +66,7 @@ export const profile = {
       {
         title: 'AI Agents & Voice Automation',
         description:
-          'Developing conversational voice employees and multi-step agent workflows that connect LLMs to telephony, knowledge bases, and external tools.',
+          'Developing AI voice agents and multi-step agent workflows that connect LLMs to telephony, knowledge bases, and external tools.',
       },
       {
         title: 'Practical Builder Mindset',
